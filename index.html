@@ -15,7 +15,7 @@
 
 		{{ age }}
 
-	<button v-on:click="addAge(1)">add a year</button>
+	<button v-on:click.once="addAge(1)">add a year</button>
 	<button v-on:click="subtractAge(1)">subtract a year</button>	
 
 	
