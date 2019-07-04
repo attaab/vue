@@ -1,14 +1,14 @@
 new Vue ({
     el : "#vue-app",
     data : {
-        website : "https://github.com/codefingas/vue"
+       age : 25
     },
-    computed: {
-        addAgeToA : function () {
-            return this.age + this.a;
+    methods: {
+        addAge : function (inc) {
+            this.age += inc;
         },
-        addAgeToB : function () {
-            return this.age + this.b;
+        subtractAge : function (dec) {
+            this.age -= dec;
         }
     }
 })

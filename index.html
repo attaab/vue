@@ -10,64 +10,19 @@
 
 	<div id="vue-app">
 		<h1>
-		Data Binding
+			Events
 		</h1>
 
+		{{ age }}
 
-	<a href="website">
-			this project repository.
-		</a>
-	</div>
+	<button v-on:click="addAge(1)">add a year</button>
+	<button v-on:click="subtractAge(1)">subtract a year</button>	
 
+	
+	<button v-on:dblclick="addAge(10)">add 10 years</button>
+	<button v-on:dblclick="subtractAge(10)">subtract 10 years</button>
 
-
-
-	<!-- <div id="vue-app">
-
-		<h1>Keyboard events</h1>
-		<label for="logName">Name</label>
-
-		<br/>
-		<input type="text" v-model="name"/>
-		<span>{{ name }}</span>
-		
-		<br/>
-		<br/>
-
-
-		<label for="logAge">Age</label>
-
-		<br/>
-		<input type="text" v-model="age"/>
-		<span> {{ age }} </span>
-
-	</div> -->
-
-
-
-
-	<!-- <div id="vue-app">
-		<h1>Events</h1>
-
-		<button v-on:click="add(1)">Add 1</button>
-		<button v-on:click="subtract(1)">Subtract 1</button>
-		<button v-on:dblclick="add(10)">add 10</button>
-		<button v-on:dblclick="subtract(10)">subtract 10</button>
-
-		<p>
-			{{ age }}
-		</p>
-
-		<div id="canvas"  v-on:mousemove="updateXY">
-			{{ x }}, {{ y }}
-		</div>
-
-		<div id="canvas">
-				<span id="x">i am x</span>,<span id="y">i am x</span>
-		</div>
-
-
-	</div> -->
+</div>
 
 	<script src="./assets//vue/vueController.js"></script>
 	<script src="./assets/vue/main.js"></script>
