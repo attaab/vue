@@ -1,71 +1,18 @@
 new Vue ({
     el : "#vue-app",
     data : {
-       age : 25,
-       x : 0,
-       y : 0
+       age : 20,
+       a : 0,
+       b : 0
     },
-    methods: {
-        addAge : function (inc) {
-            this.age += inc;
+    computed: {
+        addtoA : function () {
+            console.log("addtoA");
+           return this.a + this.age;
         },
-        subtractAge : function (dec) {
-            this.age -= dec;
-        },
-        updateXY : function (event) {
-
-            this.x = event.offsetX;
-            this.y = event.offsetY;
-            
+        addToB : function () {
+            console.log("addToB");
+            return this.b + this.age;
         }
     }
 })
-
-/**this vue instance is for the keyboard events */
-// new Vue({
-//     el: "#vue-app",
-//     data : {
-//         name : "name",
-//         age : "age"
-//     },
-//     methods: {
-//         logName : function () {
-            
-//             console.log("you entered your name");
-//         },
-
-//         logAge : function () {
-//             console.log("you entered your age");
-//         }
-//     }
-
-
-// })
-
-
-
-
-/**this vue instance is for the  events lesson*/
-// new Vue({
-//     el: '#vue-app',
-//     data: {
-//         person : {
-//             name : "shaun"
-//     },
-//     age : 26,
-//         x : 0,
-//         y : 0
-//     },
-//     methods: {
-//         add : function (inc)    {
-//             this.age += inc;
-//         },
-//         subtract : function (dec) {
-//             this.age -= dec;
-//         },
-//         updateXY : function (event) {
-//            this.x = event.offsetX;
-//            this.y = event.offsetY;
-//         }
-//     }
-// });

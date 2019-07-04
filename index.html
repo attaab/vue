@@ -10,19 +10,20 @@
 
 	<div id="vue-app">
 		<h1>
-			Computed Properties
+			Events
 		</h1>
 
-		
+		{{ age }}
 
-	<button v-on:click="a++">add to A</button>
-	<button v-on:click="b++">add to B</button>	
+	<button v-on:click="a++">Add to A</button>
+	<button v-on:click="b++">Add to B</button>	
 
-	<p>A - {{ a }}</p>
-	<p>B - {{ b }}</p>
+	<p>A - {{ a }} </p>
+	<p>B - {{ b }} </p>
 
-
-
+	<p>Age + A {{addToA}}</p>
+	<p>Age + B {{addToB}}</p>
+	
 </div>
 
 	<script src="./assets//vue/vueController.js"></script>
