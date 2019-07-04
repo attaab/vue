@@ -1,7 +1,7 @@
 new Vue ({
     el : "#vue-app",
     data : {
-        website : "https://github.com/codefingas"
+        website : "https://github.com/codefingas/vue"
     },
     computed: {
         addAgeToA : function () {
