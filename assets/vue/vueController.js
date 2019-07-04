@@ -21,7 +21,13 @@ new Vue ({
         click : function (event) {
             // console.log(event);
             alert("you click the link " + event.target.innerHTML);
-        }
+        },
+        alertName : function () {
+            alert("you entered your name");
+       },
+       alertage : function () {
+           alert("you entered your age");
+       }
     }
 })
 
