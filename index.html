@@ -10,23 +10,18 @@
 
 	<div id="vue-app">
 		<h1>
-			Events
+			Computed Properties
 		</h1>
 
-		{{ age }}
+		
 
-	<button v-on:click="addAge(1)">add a year</button>
-	<button v-on:click="subtractAge(1)">subtract a year</button>	
+	<button v-on:click="a++">add to A</button>
+	<button v-on:click="b++">add to B</button>	
 
-	
-	<button v-on:dblclick="addAge(10)">add 10 years</button>
-	<button v-on:dblclick="subtractAge(10)">subtract 10 years</button>
-<br/>
-<br/>
-<br/>
-	<div id="canvas" v-on:mousemove="updateXY">
-		{{ x }}, {{ y }}
-	</div>
+	<p>A - {{ a }}</p>
+	<p>B - {{ b }}</p>
+
+
 
 </div>
 
