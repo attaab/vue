@@ -10,7 +10,7 @@ span {
     background: green;
 }
 
-.nearBy span {
+.nearby span:after {
     content: "nearby";
     margin: 10px;
 }

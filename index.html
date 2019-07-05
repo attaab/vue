@@ -10,17 +10,29 @@
 
 	<div id="vue-app">
 		<h1>
-		2 way Data Binding
+			Dynamic Css classes
 		</h1>
 
+			<!-- <h4>Example 1</h4>
+	<p v-on:click="available = !available" v-bind:class="{available:available}">
+		<span>
+			Ryu
+		</span>
+	</p> -->
 
-		{{name}} <br/>
+	<h4>Example 2</h4>
 
-		<input type="text" name="" id="" v-model="name"/>
-	</div>
+	<button v-on:click="available = !available"> Toggle Available</button>
+	<button v-on:click="nearBy = !nearBy"> Toggle nearby</button>
 
 
-
+	<p v-bind:class="compClasses">
+		<span>
+			Ryu
+		</span>
+	</p>
+	
+</div>
 
 	<script src="./assets//vue/vueController.js"></script>
 	<script src="./assets/vue/main.js"></script>
