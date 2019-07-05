@@ -1,8 +1,8 @@
 new Vue ({
     el : "#vue-app",
     data : {
-       available : false,
-       nearBy : false,
+       error : false,
+       success : false,
     },
     computed : {
         compClasses : function () {

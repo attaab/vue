@@ -10,28 +10,30 @@
 
 	<div id="vue-app">
 		<h1>
-			Dynamic Css classes
+			Conditionals
 		</h1>
 
-			<!-- <h4>Example 1</h4>
-	<p v-on:click="available = !available" v-bind:class="{available:available}">
-		<span>
-			Ryu
-		</span>
-	</p> -->
+		<button v-on:click="error = !error">Toogle Error</button>
 
-	<h4>Example 2</h4>
-
-	<button v-on:click="available = !available"> Toggle Available</button>
-	<button v-on:click="nearBy = !nearBy"> Toggle nearby</button>
+		<button v-on:click="success = !success">Toogle Success</button>
 
 
-	<p v-bind:class="compClasses">
-		<span>
-			Ryu
-		</span>
-	</p>
-	
+		<!-- <p v-if="error">
+			there has been an Error
+		</p>
+
+		<p v-else-if="success">
+			Whooo, Success :)
+		</p> -->
+
+		<p v-show="error">
+			there has been an Error
+		</p>
+
+		<p v-show="success">
+			Whooo, Success :)
+		</p>
+
 </div>
 
 	<script src="./assets//vue/vueController.js"></script>
