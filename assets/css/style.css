@@ -1,6 +1,33 @@
-#canvas {
-    width: 600px;
-    padding: 200px 20px;
-    text-align: center;
-    border: 1px solid #333;
+h4 {
+    margin: 0 auto;
+    width: 120px;
+}
+
+#bag {
+    width: 200px;
+    height: 450px;
+    margin: 0 auto;
+    background: url("./assets/img/bag.png") center no-repeat;
+    background-size: 80%;
+}
+
+#bag.burst {
+    background: url("./assets/img/bag-burst.png") center no-repeat;
+    background-size: 80%;
+}
+
+#bag-health {
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto 20px auto;
+}
+
+#bag-health div {
+    height: 20px;
+    background: crimson;
+}
+
+#controls {
+    width: 120px;
+    margin: 0 auto;
 }
