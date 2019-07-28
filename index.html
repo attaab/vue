@@ -10,24 +10,12 @@
 
 	<div id="vue-app">
 
-		<h4>Punch bag Game</h4>
-
-		<!-- Punch Bag -->
-		<div id="bag" v-bind:class="{burst : ended}"> </div>
-
-		<!-- punch bag health bar -->
-		<div id="bag-health">
-			<div v-bind:style="{width: width + '%'}">
-				
-			</div>
-			
-		</div>
-
-		<!-- punch bag controls -->
-		<div id="controls">
-			<button v-on:click="punch" v-show="!ended">Punch</button>
-			<button v-on:click="restart">Restart</button>
-		</div>
+			<template v-for="ninja in ninjas">
+				<div v-for="(val, key) in ninja">
+					
+				</div>
+			</template>
+		
 	</div>
 
 	<script src="./assets//vue/vueController.js"></script>
