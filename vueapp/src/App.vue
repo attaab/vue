@@ -10,7 +10,7 @@
 export default {
   data () {
     return {
-      title: 'Welcome to Your Vue.js App'
+      title: 'Ninja App'
     }
   },
   methods: {
