@@ -1,15 +1,10 @@
 new Vue ({
     el : "#vue-app",
-    data : {
-       error : false,
-       success : false,
-    },
-    computed : {
-        compClasses : function () {
-            return {
-                available : this.available,
-                nearby : this.nearBy
-            }
-        }
-    }
+   data: {
+       topic : "cycling through properties in Vue using V-for",
+        students : [
+            {name : "boy", age : 15},
+            {name : "girl", age : 14}
+        ]
+   }
 })

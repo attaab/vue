@@ -9,30 +9,12 @@
 <body>
 
 	<div id="vue-app">
-		<h1>
-			Conditionals
-		</h1>
-
-		<button v-on:click="error = !error">Toogle Error</button>
-
-		<button v-on:click="success = !success">Toogle Success</button>
-
-
-		<!-- <p v-if="error">
-			there has been an Error
-		</p>
-
-		<p v-else-if="success">
-			Whooo, Success :)
-		</p> -->
-
-		<p v-show="error">
-			there has been an Error
-		</p>
-
-		<p v-show="success">
-			Whooo, Success :)
-		</p>
+		<h1>{{author}}</h1>
+		<template v-for="student in students">
+			<div v-for="(val, key) in student">
+				<p>{{val}}</p>
+			</div>
+		</template>
 
 </div>
 
