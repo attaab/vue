@@ -1,5 +1,8 @@
 <template>
     <div>
+        <h1>
+            List of Ninjas
+        </h1>
        <ul>
            <li v-for="ninja in ninjas">
                 {{ ninja }}
@@ -18,3 +21,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    h1 {
+        color: purple;
+    }
+</style>
