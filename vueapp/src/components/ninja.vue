@@ -8,6 +8,8 @@
 
                 </li>
         </ul>
+
+        <button v-on:click="deleteNinja">Delete Ninja</button>
     </div>
     
 </template>
@@ -25,7 +27,12 @@
             return {
                
             }
-        }
+        },
+        methods: {
+            deleteNinja : function () {
+                this.ninjas.pop();
+            }
+        },
     }
 </script>
 
