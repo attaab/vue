@@ -2,7 +2,7 @@
     <div>
         <header>
             <h1 v-on:click="changeTitle">
-                {{title}}
+                {{ title }}
             </h1>
         </header>
     </div>
