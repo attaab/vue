@@ -10,6 +10,8 @@
 
 
 <script>
+import { bus } from "../main";
+
 export default {
     props : {
         title : {
@@ -23,7 +25,9 @@ export default {
     },
     methods: {
         changeTitle : function () {
-            this.$emit("changeTitle",  "Vue Wizards ?");
+            // this.$emit("changeTitle",  "Vue Wizards ?");
+            this.title = "Vue Wizards ?";//changing the title of the header
+            bus.$emit("titleChange", "Vue Wizards ?");//passing the new title to the bus
         }
     },
 }

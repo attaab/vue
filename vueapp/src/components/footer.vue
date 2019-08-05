@@ -8,6 +8,8 @@
 
 
 <script>
+import { bus } from "../main";
+
 export default {
     props : {
         title : {
@@ -19,6 +21,11 @@ export default {
         //    copyright : "copyright 2019 Vue Ninjas"
            copyright : "copyright 2019 "
        } 
+    },
+    created() {
+        bus.$on("titleChange", (data) => {
+            this.title = data;
+        }); 
     }
 }
 </script>
