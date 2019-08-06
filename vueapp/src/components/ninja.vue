@@ -30,10 +30,29 @@
             }
         },
         methods: {
-            deleteNinja : function () {
-                this.ninjas.pop();
-            }
+             deleteNinja: function() {
+                 this.ninjas.pop();
+             }
         },
+        //lifecycle Hooks
+        beforeCreate() {
+            alert("Before create");
+        },
+        created() {
+            alert("Created");
+        },
+        beforeMount() {
+            alert("before Mount");
+        },
+        mounted() {
+            alert("mounted");
+        },
+        beforeUpdate() {//this runs when some data change for example when we press the delete ninja button which is available on the screen
+            alert("before Update");
+        },
+        updated() {//this function runs when the data on the screen is updated
+            alert("updated");
+        }
     }
 </script>
 
