@@ -2,7 +2,7 @@
   "name": "vueapp",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "codefingers <udohezekiel34@yahoo.com>",
+  "author": "codefingers",
   "license": "MIT",
   "private": true,
   "scripts": {
