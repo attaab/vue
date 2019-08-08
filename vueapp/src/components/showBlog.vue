@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {bus} from "../main";//pulling in the event bus from the mai
+// import {bus} from "../main";//pulling in the event bus from the mai
 
 export default {
     props : ["blogsData"],
@@ -21,8 +21,7 @@ export default {
     },
     methods: {
         fullText: function() {
-            console.log(this.blogs);
-            console.log()
+           
         }
     },
     created() {//created is a lifecycle hook that runs when the instance has been created but not yet mounted
@@ -33,7 +32,7 @@ export default {
 
         //     });
 
-        this.blogs = this.blogsData.slice(0, 10);//i have set the blogs array to point to the prop
+        this.blogs = this.blogsData.slice(0, 10);//blog data are being passed through props
     }
 }
 </script>

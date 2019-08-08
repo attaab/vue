@@ -40,7 +40,7 @@ Vue.filter("to-uppercase", function (value) {
 });
 
 Vue.filter("snippet", function (value) {//filter function
-  let data = value;
+  
   return value.slice(0, 100) + "...";
 });
 
