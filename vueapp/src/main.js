@@ -32,9 +32,25 @@ Vue.directive("theme", {
      };
 
   }
-})
+});
+
+//FILTERS
+Vue.filter("to-uppercase", function (value) {
+      return value.toUpperCase();//the toUppercase function converts a string to all uppercases
+});
+
+Vue.filter("snippet", function (value) {//filter function
+  let data = value;
+  return value.slice(0, 100) + "...";
+});
+
+
+Vue.filter("reverseSnippet", function (value) {
+    return value;
+});
 
 new Vue({
   el: '#app',
   render: h => h(App)
 });
+

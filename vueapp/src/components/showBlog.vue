@@ -4,29 +4,37 @@
 
       <div v-for="blog in blogs" class="single-blog">
           <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
-          <article>{{blog.body}}</article>
+          <article v-on:click="fullText">{{blog.body | snippet}}</article>
       </div>
   </div>
 </template>
 
 <script>
+import {bus} from "../main";//pulling in the event bus from the mai
 
 export default {
+    props : ["blogsData"],
     data() {
         return {
             blogs : []
         }
-    },methods: {
-        
+    },
+    methods: {
+        fullText: function() {
+            console.log(this.blogs);
+            console.log()
+        }
     },
     created() {//created is a lifecycle hook that runs when the instance has been created but not yet mounted
-        this.$http.get("http://jsonplaceholder.typicode.com/posts")//here we dont need to passing in post requests, we arent sending any data 
-                .then(function(data){
-                    
-                   this.blogs = data.body.slice(0,10);
+            // I commented this out when I passed the blog as a prop no longer a GET request 
+        // this.$http.get("http://jsonplaceholder.typicode.com/posts")//here we dont need to passing in post requests, we arent sending any data 
+        //     .then(function(data){
+        //         this.blogs = data.body.slice(0,10);
 
-                });
-    },
+        //     });
+
+        this.blogs = this.blogsData.slice(0, 10);//i have set the blogs array to point to the prop
+    }
 }
 </script>
 
