@@ -1,8 +1,8 @@
 <template>
   <div v-theme:column=" 'wide' " id="show-blogs">
       <h1>All Blog Articles</h1>
-
-      <div v-for="blog in blogs" class="single-blog">
+     <input v-model="search" placeholder="Search blogs" type="text" name="" id="">
+      <div v-for="blog in filteredBlogs" class="single-blog">
           <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
           <article v-on:click="fullText">{{blog.body | snippet}}</article>
       </div>
@@ -16,7 +16,8 @@ export default {
     props : ["blogsData"],
     data() {
         return {
-            blogs : []
+            blogs : [],
+            search : ""
         }
     },
     methods: {
@@ -33,7 +34,14 @@ export default {
         //     });
 
         this.blogs = this.blogsData.slice(0, 10);//blog data are being passed through props
-    }
+    },
+    computed : {
+        filteredBlogs : function () {
+            return this.blogs.filter((blog) => {
+                return blog.title.match(this.search);
+            });
+        }
+    } 
 }
 </script>
 
@@ -49,4 +57,11 @@ export default {
     box-sizing: border-box;
     background: #eee;
 }
+
+ input[type="text"], textarea {
+         display: block;
+         width: 100%;
+         padding: 8px;
+     }
+
 </style>
