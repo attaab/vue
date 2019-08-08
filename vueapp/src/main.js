@@ -10,13 +10,13 @@ Vue.use(VueResource);//telling vue to use the resource file we imported
 //custom directives
 //vue diretive takes a couple of arguments
 //first is its name.
-Vue.directive("rainbow", {
-  bind(el, binding, vnode){
-        //the next line of code takes the element property and styles its color
-        //the Math.random().toString().slice(2,8) function gets a random number converts it to a string and slices it to 6 digits
-        el.style.color = '#'+ Math.random().toString().slice(2,8);
-  }
-});
+// Vue.directive("rainbow", {//this function was commented because it now runs locally
+//   bind(el, binding, vnode){
+//         //the next line of code takes the element property and styles its color
+//         //the Math.random().toString().slice(2,8) function gets a random number converts it to a string and slices it to 6 digits
+//         el.style.color = '#'+ Math.random().toString().slice(2,8);
+//   }
+// });
 
 Vue.directive("theme", {
   bind(el, binding, vnode){
@@ -44,10 +44,6 @@ Vue.filter("snippet", function (value) {//filter function
   return value.slice(0, 100) + "...";
 });
 
-
-Vue.filter("reverseSnippet", function (value) {
-    return value;
-});
 
 new Vue({
   el: '#app',

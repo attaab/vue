@@ -1,8 +1,9 @@
 <template>
   <div>
 
-    <!-- <add-blog></add-blog> -->
+    <add-blog  v-bind:blogsData="blogsData"></add-blog>
     <show-blog v-bind:blogsData="blogsData"></show-blog>
+    <list-blogs  v-bind:blogsData="blogsData"></list-blogs>
       
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 //imports
 import addBlog from "./components/addBlog.vue";
-import showBlog from "./components/showBlog.vue"
+import showBlog from "./components/showBlog.vue";
+import listBlogs from "./components/listBlogs.vue";
 
 export default {
   components : {
     "add-blog" : addBlog,
-    "show-blog" : showBlog
+    "show-blog" : showBlog,
+    "list-blogs" : listBlogs
   },
   data() {
       return {

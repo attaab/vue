@@ -1,20 +1,20 @@
 <template>
   <div v-theme:column=" 'wide' " id="show-blogs">
-      <h1>All Blog Articles</h1>
+      <h1>List Blog Title</h1>
      <input v-model="search" placeholder="Search blogs" type="text" name="" id="">
       <div v-for="blog in filteredBlogs" class="single-blog">
           <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
-          <article v-on:click="fullText">{{blog.body | snippet}}</article>
       </div>
   </div>
 </template>
 
 <script>
-import {bus} from "../main";//pulling in the event bus from the mai
-import searchMixin from "../mixins/searchMixin";//importing mixin for search functionality
+// import {bus} from "../main";//pulling in the event bus from the mai
+import searchMixin from "../mixins/searchMixin";//importing the search mixin function
 
 export default {
     props : ["blogsData"],
+    
     data() {
         return {
             blogs : [],
@@ -35,11 +35,6 @@ export default {
         //     });
 
         this.blogs = this.blogsData.slice(0, 10);//blog data are being passed through props
-
-        /**catching the updated blog */
-        bus.$on("submittedNewBlog", (data)=>{
-            this.blogsData.push(data);//adding the new data from the bus to the blog
-        });
     },
     filters : {
         'to-uppercase': function (value) {//this function or that on directives.rainbow can be defined like data was and it would still work perfectly
@@ -53,7 +48,7 @@ export default {
             }
         }
     },
-    mixins: [searchMixin]
+    mixins : [searchMixin]//Mixins are arrays and are registered like so
 } 
 </script>
 

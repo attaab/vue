@@ -5,7 +5,7 @@
       <form v-if="!submitted">
           <label for="blog-title"></label>
 
-          <input type="text" v-model.lazy="blog.title" required/>
+          <input type="text" placeholder="Blog Title" v-model.lazy="blog.title" required/>
 
            <label for="blog-content"> Blog Content</label>
            <textarea v-model.lazy="blog.content" name="" id="" cols="30" rows="10"></textarea>
@@ -59,9 +59,10 @@
 </template>
 
 <script>
+import {bus} from "../main";
 
 export default {
-
+    props: ["blogsData"],
     data() {
         return {
             blog : {
@@ -76,14 +77,29 @@ export default {
     },
     methods: {
         post: function() {//in this method, before we had access to the http, we had to first add vue resource
-            this.$http.post("http://jsonplaceholder.typicode.com/posts", {//this post object takes two parameters the first is the url and the second is the object we want to send
-                title : this.blog.title,
-                body : this.blog.content,
-                userId : 1
-            }).then(function(data) {//we are passing the then method because this is a promise when it is done, any function here will fire
-                console.log(data);
+        /**I am commenting out the $http method  I want it to use the data object */
+            // this.$http.post("http://jsonplaceholder.typicode.com/posts", {//this post object takes two parameters the first is the url and the second is the object we want to send
+            //     title : this.blog.title,
+            //     body : this.blog.content,
+            //     userId : 1
+            // }).then(function(data) {//we are passing the then method because this is a promise when it is done, any function here will fire
+            //     console.log(data);
+            //     this.submitted = true;
+            // });
+
+
+
+            /**here we will commuicate with the array object */
+            let title = this.blog.title,
+                body = this.blog.content,
+                userId = 1;
+
                 this.submitted = true;
-            });
+
+               
+                
+                bus.$emit('submittedNewBlog', {title, body});
+
         }
     },
 }
